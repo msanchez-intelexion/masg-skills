@@ -1,0 +1,11 @@
+{
+  "eval_id": 3,
+  "assertions": [
+    "Pregunta explícitamente al usuario qué plataforma desea (Gemini, ChatGPT o Claude)",
+    "NO genera un prompt final completo sin haber definido la plataforma",
+    "Presenta al menos 2 plataformas con comparación o trade-offs para ayudar al usuario a elegir",
+    "Aplica Fase A de diagnóstico mostrando que falta información antes de continuar"
+  ],
+  "eval_name": "social-media-no-platform",
+  "prompt": "Quiero un asistente que ayude a redactores de mi equipo a crear publicaciones para redes sociales. No sé bien en qué plataforma ponerlo todavía. ¿Qué me recomiendas y cómo lo armaría?"
+}

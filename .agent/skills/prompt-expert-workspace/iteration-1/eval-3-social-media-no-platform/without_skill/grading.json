@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    { "text": "Pregunta explícitamente al usuario qué plataforma desea (Gemini, ChatGPT o Claude)", "passed": false, "evidence": "asks_for_platform=false; lista opciones pero procede directamente sin preguntar" },
+    { "text": "NO genera un prompt final completo sin haber definido la plataforma",                 "passed": false, "evidence": "generates_final_prompt_without_platform=true; da prompt base genérico directamente" },
+    { "text": "Presenta al menos 2 plataformas con comparación o trade-offs para ayudar al usuario", "passed": true,  "evidence": "presents_platform_options=true; menciona ChatGPT, Claude, Slack y otras" },
+    { "text": "Aplica Fase A de diagnóstico mostrando que falta información antes de continuar",     "passed": false, "evidence": "applies_phase_a=false; no hay fase de descubrimiento estructurada" }
+  ],
+  "summary": { "passed": 1, "failed": 3, "total": 4, "pass_rate": 0.25 }
+}

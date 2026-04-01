@@ -1,0 +1,14 @@
+{
+  "eval_id": 1,
+  "assertions": [
+    "Incluye sección de Razonamiento Estratégico visible antes del prompt final",
+    "El prompt usa delimitadores de ChatGPT (###, triple comillas o ---)",
+    "Contiene al menos un ejemplo Input/Output (Few-Shot Prompting)",
+    "Incluye cláusula de protección anti-leaking de instrucciones",
+    "Usa cuantificadores concretos (números) en lugar de adjetivos vagos como 'breve' o 'corto'",
+    "La respuesta final está dentro de un bloque de código Markdown",
+    "El framework PTCF (Persona, Tarea, Contexto, Formato) está presente"
+  ],
+  "eval_name": "customer-service-chatgpt",
+  "prompt": "Necesito crear un asistente de IA para el área de atención a clientes de mi empresa. Los agentes lo usarán para responder dudas sobre facturación y contratos. Va en ChatGPT. ¿Me ayudas a diseñar las instrucciones?"
+}

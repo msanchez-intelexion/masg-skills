@@ -1,0 +1,12 @@
+{
+  "expectations": [
+    { "text": "Incluye sección de Razonamiento Estratégico visible antes del prompt final", "passed": true,  "evidence": "sections_present incluye 'Fase B — Razonamiento Estratégico'" },
+    { "text": "El prompt usa delimitadores de ChatGPT (###, triple comillas o ---)",          "passed": true,  "evidence": "has_chatgpt_delimiters=true; '### ROL Y PROPÓSITO', triple-quote para ejemplos, '---' separador" },
+    { "text": "Contiene al menos un ejemplo Input/Output (Few-Shot Prompting)",               "passed": true,  "evidence": "has_few_shot=true; 2 ejemplos completos Input→Output en sección EJEMPLOS DE COMPORTAMIENTO ESPERADO" },
+    { "text": "Incluye cláusula de protección anti-leaking de instrucciones",                 "passed": true,  "evidence": "has_anti_leaking=true; sección '### CONFIDENCIALIDAD' con respuesta exacta" },
+    { "text": "Usa cuantificadores concretos (números) en lugar de adjetivos vagos",          "passed": true,  "evidence": "has_quantifiers=true; 'máximo 3 oraciones', 'entre 2 y 4 pasos', '3 a 5 días hábiles'" },
+    { "text": "La respuesta final está dentro de un bloque de código Markdown",               "passed": true,  "evidence": "Agent reportó todos los 7 booleanos en true; output en bloque Markdown confirmado" },
+    { "text": "El framework PTCF (Persona, Tarea, Contexto, Formato) está presente",         "passed": true,  "evidence": "has_ptcf=true; sección 'Aplicación de PTCF a este caso' en Razonamiento Estratégico" }
+  ],
+  "summary": { "passed": 7, "failed": 0, "total": 7, "pass_rate": 1.0 }
+}

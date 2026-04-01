@@ -1,0 +1,13 @@
+{
+  "sections_present": [
+    "prompt_mejorado",
+    "que_cambie_y_por_que"
+  ],
+  "has_ptcf": false,
+  "uses_xml_tags": false,
+  "identifies_original_problems": true,
+  "converts_negative_to_positive": true,
+  "has_quantifiers": false,
+  "has_strategic_reasoning": false,
+  "has_anti_leaking": false
+}

@@ -1,0 +1,11 @@
+{
+  "expectations": [
+    { "text": "Identifica explícitamente los problemas del prompt original",                  "passed": true,  "evidence": "identifies_original_problems=true; identifica que el prompt es vago" },
+    { "text": "El prompt mejorado usa etiquetas XML para Claude",                             "passed": false, "evidence": "uses_xml_tags=false; sin etiquetas XML; estructura en prosa" },
+    { "text": "Convierte instrucciones negativas a encuadre positivo",                        "passed": true,  "evidence": "converts_negative_to_positive=true; reformula 'no des información incorrecta'" },
+    { "text": "Agrega cuantificadores concretos donde había adjetivos subjetivos",            "passed": false, "evidence": "has_quantifiers=false; sin cuantificadores numéricos" },
+    { "text": "Incluye Razonamiento Estratégico explicando las decisiones de mejora",         "passed": false, "evidence": "has_strategic_reasoning=false; solo explica cambios brevemente" },
+    { "text": "Incluye cláusula anti-leaking en el prompt mejorado",                          "passed": false, "evidence": "has_anti_leaking=false; sin cláusula de confidencialidad" }
+  ],
+  "summary": { "passed": 2, "failed": 4, "total": 6, "pass_rate": 0.33 }
+}

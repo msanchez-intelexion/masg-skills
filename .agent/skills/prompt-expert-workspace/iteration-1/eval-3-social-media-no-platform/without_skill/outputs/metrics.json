@@ -1,0 +1,10 @@
+{
+  "eval_id": "eval-3-social-media-no-platform",
+  "variant": "without_skill",
+  "asks_for_platform": false,
+  "presents_platform_options": true,
+  "generates_final_prompt_without_platform": true,
+  "applies_phase_a": false,
+  "mentions_at_least_2_platforms": true,
+  "notes": "El asistente genérico presenta opciones de plataforma de despliegue (ChatGPT, Claude, Slack, no-code) pero no hace preguntas de descubrimiento estructuradas antes de responder. Genera directamente un prompt base funcional para redes sociales sin indagar más sobre el contexto del equipo, el flujo de trabajo, restricciones de presupuesto u otros factores clave. No aplica ninguna fase de análisis previo (Phase A)."
+}

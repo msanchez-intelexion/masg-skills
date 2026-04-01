@@ -1,0 +1,11 @@
+{
+  "expectations": [
+    { "text": "Identifica explícitamente los problemas del prompt original",                  "passed": true,  "evidence": "identifies_original_problems=true; 9 gaps identificados y listados" },
+    { "text": "El prompt mejorado usa etiquetas XML para Claude",                             "passed": true,  "evidence": "uses_xml_tags=true; <persona>, <tarea>, <contexto>, <formato>, <ejemplos>, <restricciones>" },
+    { "text": "Convierte instrucciones negativas a encuadre positivo",                        "passed": true,  "evidence": "converts_negative_to_positive=true; 'No des información incorrecta' → paso de auto-verificación + remisión a RR.HH." },
+    { "text": "Agrega cuantificadores concretos donde había adjetivos subjetivos",            "passed": true,  "evidence": "has_quantifiers=true; 'máximo 150 palabras', 'máximo 1 emoji', '1-2 días hábiles', 'primeros 90 días'" },
+    { "text": "Incluye Razonamiento Estratégico explicando las decisiones de mejora",         "passed": true,  "evidence": "has_strategic_reasoning=true; 5 secciones: Problema Central, Riesgos, PTCF, Few-Shot, Dependencias" },
+    { "text": "Incluye cláusula anti-leaking en el prompt mejorado",                          "passed": true,  "evidence": "has_anti_leaking=true; sección <restricciones> con cláusula de confidencialidad" }
+  ],
+  "summary": { "passed": 6, "failed": 0, "total": 6, "pass_rate": 1.0 }
+}

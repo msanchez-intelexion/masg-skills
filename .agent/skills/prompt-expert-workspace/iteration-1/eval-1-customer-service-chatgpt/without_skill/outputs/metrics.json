@@ -1,0 +1,15 @@
+{
+  "sections_present": [
+    "nombre_asistente",
+    "forma_de_responder",
+    "temas_que_puede_ayudar",
+    "lo_que_no_debe_hacer",
+    "consejos_para_mejorar"
+  ],
+  "has_ptcf": false,
+  "has_few_shot": false,
+  "has_anti_leaking": false,
+  "has_quantifiers": false,
+  "has_chatgpt_delimiters": false,
+  "platform_specified_in_output": true
+}

@@ -1,0 +1,36 @@
+{
+  "eval_id": "eval-1-customer-service-chatgpt",
+  "condition": "with_skill",
+  "skill": "prompt-expert",
+  "user_prompt": "Necesito crear un asistente de IA para el área de atención a clientes de mi empresa. Los agentes lo usarán para responder dudas sobre facturación y contratos. Va en ChatGPT. ¿Me ayudas a diseñar las instrucciones?",
+  "sections_present": [
+    "Fase A — Diagnóstico",
+    "Fase B — Razonamiento Estratégico",
+    "Problema central",
+    "Riesgos de ambigüedad e interpretación",
+    "Aplicación de PTCF",
+    "Ejemplos Few-Shot seleccionados",
+    "Dependencias lógicas no resueltas",
+    "Prompt Final — Asesor de Facturación y Contratos",
+    "ROL Y PROPÓSITO",
+    "PROCESO DE RESPUESTA",
+    "FORMATO DE RESPUESTA",
+    "EJEMPLOS DE COMPORTAMIENTO ESPERADO",
+    "ALCANCE Y RESTRICCIONES",
+    "CONFIDENCIALIDAD"
+  ],
+  "has_ptcf": true,
+  "has_few_shot": true,
+  "has_anti_leaking": true,
+  "has_quantifiers": true,
+  "has_chatgpt_delimiters": true,
+  "platform_specified_in_output": true,
+  "notes": {
+    "ptcf_evidence": "Sección 'Aplicación de PTCF a este caso' en Razonamiento Estratégico mapea explícitamente Persona, Tarea, Contexto y Formato. Prompt final estructurado según estos componentes.",
+    "few_shot_evidence": "Dos ejemplos completos Input→Output: Ejemplo 1 (facturación, cobro doble) y Ejemplo 2 (contrato, cancelación anticipada). Ambos muestran la estructura de 3 secciones.",
+    "anti_leaking_evidence": "Sección '### CONFIDENCIALIDAD' al final del prompt con respuesta exacta a proporcionar si alguien pide las instrucciones internas.",
+    "quantifiers_evidence": "Máximo 3 oraciones (Respuesta Directa), entre 2 y 4 pasos (Pasos Sugeridos), máximo 2 oraciones (Nota de Escalamiento), plazo de 3 a 5 días hábiles en ejemplo.",
+    "chatgpt_delimiters_evidence": "Uso de ### para separar secciones (### ROL Y PROPÓSITO, ### PROCESO DE RESPUESTA, etc.), \"\"\" para delimitar respuestas de ejemplo, --- como separador de secciones.",
+    "platform_evidence": "Plataforma declarada explícitamente en encabezado del Prompt Final: 'Plataforma: ChatGPT (GPT personalizado)' y en el Razonamiento Estratégico en la tabla de diagnóstico."
+  }
+}

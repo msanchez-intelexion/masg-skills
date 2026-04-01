@@ -1,0 +1,39 @@
+{
+  "eval": "eval-2-improve-claude-prompt",
+  "variant": "with_skill",
+  "sections_present": [
+    "Diagnóstico del Prompt Original",
+    "Gaps Identificados en el Prompt Original",
+    "Razonamiento Estratégico",
+    "Prompt Final",
+    "Resumen de Mejoras Aplicadas",
+    "<persona>",
+    "<tarea>",
+    "<contexto>",
+    "<formato>",
+    "<ejemplos>",
+    "<restricciones>"
+  ],
+  "has_ptcf": true,
+  "uses_xml_tags": true,
+  "identifies_original_problems": true,
+  "converts_negative_to_positive": true,
+  "has_quantifiers": true,
+  "has_strategic_reasoning": true,
+  "has_anti_leaking": true,
+  "notes": {
+    "ptcf_components": ["Persona", "Tarea", "Contexto", "Formato"],
+    "xml_tags_used": ["persona", "tarea", "contexto", "formato", "ejemplos", "restricciones"],
+    "gaps_identified_count": 9,
+    "negative_to_positive_example": "'No des información incorrecta' → Paso de auto-verificación + remisión explícita a RR.HH.",
+    "quantifiers_added": ["Máximo 150 palabras por respuesta", "Máximo 1 emoji por respuesta", "1-2 días hábiles", "primeros 90 días", "3 criterios de verificación"],
+    "few_shot_examples_count": 3,
+    "strategic_reasoning_sections": [
+      "Problema Central",
+      "Riesgos de Ambigüedad",
+      "Aplicación del Framework PTCF",
+      "Ejemplos Few-Shot más representativos",
+      "Dependencias Lógicas"
+    ]
+  }
+}

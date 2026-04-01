@@ -1,0 +1,16 @@
+{
+  "eval_id": "eval-3-social-media-no-platform",
+  "variant": "with_skill",
+  "asks_for_platform": true,
+  "presents_platform_options": true,
+  "generates_final_prompt_without_platform": false,
+  "applies_phase_a": true,
+  "mentions_at_least_2_platforms": true,
+  "notes": {
+    "asks_for_platform": "La respuesta incluye una sección explícita '⚠️ Pregunta crítica: ¿En qué plataforma vas a desplegarlo?' antes de proceder.",
+    "presents_platform_options": "Se presenta una tabla comparativa con las 3 plataformas (ChatGPT, Claude, Gemini), su caso de uso ideal y consideraciones clave, más una recomendación condicional.",
+    "generates_final_prompt_without_platform": "No se genera ningún prompt final. La respuesta se detiene explícitamente en Fase A esperando la plataforma.",
+    "applies_phase_a": "Se identifican los datos ya conocidos (objetivo, público) y se señalan los faltantes obligatorios (plataforma, base de conocimiento, redes objetivo).",
+    "mentions_at_least_2_platforms": "Se mencionan las 3 plataformas: ChatGPT, Claude y Gemini."
+  }
+}

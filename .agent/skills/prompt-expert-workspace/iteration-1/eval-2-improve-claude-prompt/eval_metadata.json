@@ -1,0 +1,13 @@
+{
+  "eval_id": 2,
+  "assertions": [
+    "Identifica explícitamente los problemas del prompt original (instrucciones vagas, encuadre negativo, etc.)",
+    "El prompt mejorado usa etiquetas XML para Claude (<persona>, <tarea>, <contexto>, <formato>, etc.)",
+    "Convierte instrucciones negativas a encuadre positivo (ej: 'No des información incorrecta' → comportamiento deseado)",
+    "Agrega cuantificadores concretos donde había adjetivos subjetivos",
+    "Incluye Razonamiento Estratégico explicando las decisiones de mejora",
+    "Incluye cláusula anti-leaking en el prompt mejorado"
+  ],
+  "eval_name": "improve-claude-prompt",
+  "prompt": "Tengo este prompt para un asistente de onboarding en Claude y quiero mejorarlo: 'Eres un asistente de onboarding. Ayuda a los nuevos empleados. Sé amable y profesional. No des información incorrecta.'"
+}

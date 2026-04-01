@@ -1,0 +1,46 @@
+{
+  "skill_name": "prompt-expert",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Necesito crear un asistente de IA para el área de atención a clientes de mi empresa. Los agentes lo usarán para responder dudas sobre facturación y contratos. Va en ChatGPT. ¿Me ayudas a diseñar las instrucciones?",
+      "expected_output": "El skill debe ejecutar Fase A (si falta info), luego Fase B con Razonamiento Estratégico, y entregar un prompt completo con framework PTCF adaptado a ChatGPT (delimitadores ###, lógica disparador→instrucción, sección de Restricciones), con al menos un ejemplo Few-Shot y cláusula anti-leaking.",
+      "files": [],
+      "expectations": [
+        "Incluye sección de Razonamiento Estratégico antes del prompt final",
+        "El prompt final usa delimitadores de ChatGPT (###, \"\"\", ---)",
+        "Contiene al menos un ejemplo de Input/Output (Few-Shot)",
+        "Incluye cláusula de protección anti-leaking",
+        "Aplica cuantificadores concretos (no adjetivos subjetivos como 'breve')",
+        "La respuesta está dentro de un bloque de código Markdown"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Tengo este prompt para un asistente de onboarding en Claude y quiero mejorarlo: 'Eres un asistente de onboarding. Ayuda a los nuevos empleados. Sé amable y profesional. No des información incorrecta.'",
+      "expected_output": "El skill debe identificar los gaps del prompt original (falta Persona definida, Tarea vaga, sin Contexto, sin Formato, sin Few-Shot, encuadre negativo), proponer versión mejorada con etiquetas XML para Claude, aplicar las 6 directrices operativas y habilitar espacio <thinking>.",
+      "files": [],
+      "expectations": [
+        "Identifica explícitamente los problemas del prompt original",
+        "La versión mejorada usa etiquetas XML para Claude",
+        "Convierte instrucciones negativas en encuadre positivo",
+        "Agrega cuantificadores concretos donde había adjetivos vagos",
+        "Incluye Razonamiento Estratégico explicando las decisiones de mejora",
+        "La estructura sigue el framework PTCF"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Quiero un asistente que ayude a redactores de mi equipo a crear publicaciones para redes sociales. No sé bien en qué plataforma ponerlo todavía. ¿Qué me recomiendas y cómo lo armaría?",
+      "expected_output": "El skill debe detectar que falta información (plataforma) y en lugar de bloquearse, proponer 3 arquetipos/opciones de asistente con sus trade-offs por plataforma. Si el usuario elige una, debe generar el prompt completo con PTCF y adaptación de plataforma correspondiente.",
+      "files": [],
+      "expectations": [
+        "Propone alternativas de plataforma con justificación (no bloquea por falta de info)",
+        "Menciona al menos 2 plataformas con sus diferencias de implementación",
+        "Aplica Fase A parcialmente para completar la información faltante",
+        "Incluye Razonamiento Estratégico en el output final",
+        "El prompt resultante aplica las 6 Directrices Operativas"
+      ]
+    }
+  ]
+}

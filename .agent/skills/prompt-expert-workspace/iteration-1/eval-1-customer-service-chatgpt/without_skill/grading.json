@@ -1,0 +1,12 @@
+{
+  "expectations": [
+    { "text": "Incluye sección de Razonamiento Estratégico visible antes del prompt final", "passed": false, "evidence": "Sin Razonamiento Estratégico; secciones: nombre_asistente, forma_de_responder, temas, restricciones" },
+    { "text": "El prompt usa delimitadores de ChatGPT (###, triple comillas o ---)",          "passed": false, "evidence": "has_chatgpt_delimiters=false; sin delimitadores estructurados" },
+    { "text": "Contiene al menos un ejemplo Input/Output (Few-Shot Prompting)",               "passed": false, "evidence": "has_few_shot=false; sin ejemplos Input/Output" },
+    { "text": "Incluye cláusula de protección anti-leaking de instrucciones",                 "passed": false, "evidence": "has_anti_leaking=false; sin cláusula de confidencialidad" },
+    { "text": "Usa cuantificadores concretos (números) en lugar de adjetivos vagos",          "passed": false, "evidence": "has_quantifiers=false; usa adjetivos vagos sin cuantificar" },
+    { "text": "La respuesta final está dentro de un bloque de código Markdown",               "passed": false, "evidence": "Baseline no produce bloque de código estructurado; respuesta en prosa" },
+    { "text": "El framework PTCF (Persona, Tarea, Contexto, Formato) está presente",         "passed": false, "evidence": "has_ptcf=false; sin estructura PTCF" }
+  ],
+  "summary": { "passed": 0, "failed": 7, "total": 7, "pass_rate": 0.0 }
+}
