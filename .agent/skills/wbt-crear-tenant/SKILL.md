@@ -1,13 +1,13 @@
 ---
 name: "wbt-crear-tenant"
-description: "Crea un tenant nuevo en Workbeat a partir de una solicitud de alta (correo/imagen con Lead, Comercial, Organización, datos del contacto, tipo de tenant y módulos). Úsala siempre que el usuario pida \"crear un tenant\", \"dar de alta un cliente en Workbeat\", \"generar el JSON de tenant\" para TRIAL/DEMO/PRODUCCIÓN, o pida ejecutar el alta contra la API de Workbeat (login.workbeat.com / shell.workbeat.com), incluso si solo mencionan \"solicito tu apoyo para la creación del tenant de X\"."
+description: "Crea un tenant nuevo en Workbeat a partir de una solicitud de alta (correo/imagen con Lead, Comercial, Organización, datos del contacto, tipo de tenant y módulos). Úsala siempre que el usuario pida \"crear un tenant\", \"dar de alta un cliente en Workbeat\", \"generar el JSON de tenant\" para TRIAL/DEMO/PRODUCCIÓN, o pida ejecutar el alta contra la API de Workbeat (login.workbeat.com / shell.workbeat.com), incluso si solo mencionan \"solicito tu apoyo para la creación del tenant de X\"." 
 ---
 
 # Crear tenant en Workbeat
 
 Esta skill cubre el flujo completo de alta de un tenant en Workbeat: interpretar la
 solicitud, armar el JSON con las reglas de negocio correctas, y (opcionalmente)
-ejecutarlo contra la API real usando el script incluido.
+ejecutarlo contra la API real usando el script incluido. 
 
 ## Dónde vive el script (siempre en el mismo lugar, dentro de esta skill)
 
