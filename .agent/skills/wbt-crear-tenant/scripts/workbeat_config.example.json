@@ -1,0 +1,6 @@
+{
+  "credentials_source": "prompt",
+  "credentials_file": "workbeat_credentials.json",
+  "results_dir": "",
+  "//results_dir": "Opcional. Ruta donde guardar los archivos individuales de resultado (uno por ejecución). Vacío o ausente = default automático: 'resultado/' un nivel arriba de la carpeta '.agent' del proyecto, o 'resultados/' junto al script si no se encuentra '.agent'. Acepta ruta absoluta (ej. 'C:/WBT/resultado') o relativa a la carpeta de este script (ej. '../../../resultado' o 'resultados')."
+}

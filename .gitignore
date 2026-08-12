@@ -1,0 +1,9 @@
+# Credenciales y configuración real de la skill wbt-crear-tenant (contienen
+# secretos / datos específicos de cada equipo) — se mantiene la copia local,
+# pero no se versionan en el repo. Los .example.json sí se versionan.
+.agent/skills/wbt-crear-tenant/scripts/workbeat_config.json
+.agent/skills/wbt-crear-tenant/scripts/workbeat_credentials.json
+
+# Mismo patrón, por si la skill se reubica dentro del proyecto.
+**/wbt-crear-tenant/scripts/workbeat_config.json
+**/wbt-crear-tenant/scripts/workbeat_credentials.json

@@ -19,12 +19,16 @@ El origen de usuario/password se controla con un archivo de configuración
 
     {
       "credentials_source": "file",          // "prompt" o "file"
-      "credentials_file": "workbeat_credentials.json"
+      "credentials_file": "workbeat_credentials.json",
+      "results_dir": ""                      // opcional, ver sección de resultados abajo
     }
 
 - "credentials_source": "prompt"  -> se solicitan en pantalla (password oculto con getpass).
 - "credentials_source": "file"    -> se leen del archivo indicado en "credentials_file"
   (ruta relativa al mismo directorio del script, o ruta absoluta).
+- "results_dir" (opcional) -> ruta donde guardar los archivos individuales de
+  resultado (ver sección "LOG Y ARCHIVOS DE SALIDA"). Si se omite o queda
+  vacío, se usa el default automático.
 
 El archivo de credenciales ("workbeat_credentials.json" por defecto) debe tener
 este formato:
@@ -47,14 +51,24 @@ UBICACIÓN RECOMENDADA del archivo de credenciales:
 --------------------------------------------------------------------------------
 LOG Y ARCHIVOS DE SALIDA
 --------------------------------------------------------------------------------
-Cada ejecución queda registrada en dos lugares, ambos junto a este script:
+Cada ejecución queda registrada en dos lugares:
 - "tenant_creation_log.jsonl": una línea (JSON) por ejecución, con timestamp,
   input (json enviado), resultado/éxito o error. Útil para ver el historial
-  completo de una sola vez.
-- "resultados/<timestamp>_<organizacion>.json": un archivo individual por
-  ejecución con el mismo contenido, para que cada alta de tenant quede como su
-  propio archivo de salida fácil de ubicar y compartir. La carpeta "resultados/"
-  se crea automáticamente si no existe.
+  completo de una sola vez. Vive junto a este script.
+- "<carpeta_resultados>/<timestamp>_<organizacion>.json": un archivo individual
+  por ejecución con el mismo contenido, para que cada alta de tenant quede como
+  su propio archivo de salida fácil de ubicar y compartir. Esta carpeta se crea
+  automáticamente si no existe.
+
+  Por default, "<carpeta_resultados>" es "resultado/" un nivel arriba de la
+  carpeta ".agent" del proyecto (es decir, hermana de ".agent", no dentro de
+  la skill) — así los resultados quedan fuera de la carpeta de skills, fáciles
+  de encontrar y de excluir de lo que se empaqueta/instala como skill. Si el
+  script no logra ubicar una carpeta ".agent" en alguna carpeta superior (por
+  ejemplo si se instaló fuera de un proyecto con esa estructura), usa como
+  respaldo "resultados/" junto al propio script. También se puede fijar una
+  ruta explícita con "results_dir" en el archivo de configuración
+  (workbeat_config.json), que tiene prioridad sobre ambas.
 
 Uso:
     python crear_tenant_workbeat.py --json tenant.json
@@ -88,7 +102,34 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_CONFIG_FILE = os.path.join(SCRIPT_DIR, "workbeat_config.json")
 DEFAULT_CREDENTIALS_FILE = os.path.join(SCRIPT_DIR, "workbeat_credentials.json")
 LOG_FILE = os.path.join(SCRIPT_DIR, "tenant_creation_log.jsonl")
-RESULTS_DIR = os.path.join(SCRIPT_DIR, "resultados")
+
+
+def _encontrar_carpeta_proyecto(desde: str):
+    """
+    Busca hacia arriba, a partir de 'desde', una carpeta ".agent" y devuelve la
+    carpeta que la contiene (la raíz del proyecto, un nivel arriba de ".agent").
+    Si no encuentra ninguna, devuelve None.
+    """
+    actual = os.path.abspath(desde)
+    while True:
+        if os.path.basename(actual) == ".agent":
+            return os.path.dirname(actual)
+        padre = os.path.dirname(actual)
+        if padre == actual:
+            return None
+        actual = padre
+
+
+# Por default, los resultados se guardan en "resultado/" un nivel arriba de la
+# carpeta ".agent" (fuera de la carpeta de la skill). Si no se encuentra ".agent"
+# en ningún nivel superior, se usa "resultados/" junto al script como respaldo.
+_PROJECT_ROOT = _encontrar_carpeta_proyecto(SCRIPT_DIR)
+if _PROJECT_ROOT:
+    DEFAULT_RESULTS_DIR = os.path.join(_PROJECT_ROOT, "resultado")
+else:
+    DEFAULT_RESULTS_DIR = os.path.join(SCRIPT_DIR, "resultados")
+
+RESULTS_DIR = DEFAULT_RESULTS_DIR
 
 
 def _resolver_ruta(ruta: str) -> str:
@@ -100,6 +141,8 @@ def _resolver_ruta(ruta: str) -> str:
 
 def cargar_config(config_path: str = DEFAULT_CONFIG_FILE) -> dict:
     """Lee la configuración de origen de credenciales. Si no existe, usa 'prompt'."""
+    global RESULTS_DIR
+
     if not os.path.exists(config_path):
         return {"credentials_source": "prompt", "credentials_file": DEFAULT_CREDENTIALS_FILE}
 
@@ -108,6 +151,13 @@ def cargar_config(config_path: str = DEFAULT_CONFIG_FILE) -> dict:
 
     config.setdefault("credentials_source", "prompt")
     config["credentials_file"] = _resolver_ruta(config.get("credentials_file", "workbeat_credentials.json"))
+
+    # "results_dir" en la config, si viene, tiene prioridad sobre el default
+    # calculado (resultado/ un nivel arriba de .agent, o resultados/ de respaldo).
+    if config.get("results_dir"):
+        RESULTS_DIR = _resolver_ruta(config["results_dir"])
+    config["results_dir"] = RESULTS_DIR
+
     return config
 
 
