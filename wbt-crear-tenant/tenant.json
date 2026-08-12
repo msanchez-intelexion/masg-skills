@@ -1,0 +1,14 @@
+{
+  "Lead": "ernesto.g@integrityps.mx",
+  "Comercial": "ltrianar.p@intelexion.com",
+  "Organizacion": "IntegrityPs",
+  "Nombre": "Ernesto",
+  "ApellidoPaterno": "Garcia",
+  "ApellidoMaterno": "Garcia",
+  "Posicion": "Lider Gestión de Nóminas",
+  "Telefono": "8132181197",
+  "Modulos": "ADM|ORG|CRH|NOM|CFDI",
+  "TipoTenant": "COMPRA",
+  "DiasVigencia": "366",
+  "Estatus": "PRODUCCIÓN"
+}

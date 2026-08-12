@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-08-12T22:00:29.828429+00:00",
+  "input": {
+    "Lead": "ernesto.g@integrityps.mx",
+    "Comercial": "ltrianar.p@intelexion.com",
+    "Organizacion": "IntegrityPs",
+    "Nombre": "Ernesto",
+    "ApellidoPaterno": "Garcia",
+    "ApellidoMaterno": "Garcia",
+    "Posicion": "Lider Gestión de Nóminas",
+    "Telefono": "8132181197",
+    "Modulos": "ADM|ORG|CRH|NOM|CFDI",
+    "TipoTenant": "COMPRA",
+    "DiasVigencia": "366",
+    "Estatus": "PRODUCCIÓN"
+  },
+  "resultado": {
+    "uuid": "fa0cab91-ff84-4e34-a923-8d72e7b0b868",
+    "idTenant": 2680,
+    "modulos": "ADM|ORG|CRH|NOM|CFDI",
+    "mensaje": "Creacion del tenant fue exitosa",
+    "organizacion": "IntegrityPs",
+    "userId": "ernesto.g@integrityps.mx",
+    "emailValido": true,
+    "dominioUnico": true,
+    "dominioPublico": true,
+    "token": "aWRQZXJzb25hPTI1MTc1ODImdXNlcm5hbWU9ZXJuZXN0by5nQGludGVncml0eXBzLm14JnBhc3N3b3JkPTQ2MTkmdGltZU9mZnNldD0zNjAmaWRUZW5hbnQ9MjY4MA==",
+    "idPersona": 2517582,
+    "idPartnerPersona": 936249,
+    "idPartner": 1,
+    "comercial": "ltrianar.p@intelexion.com",
+    "tipoTenant": "COMPRA",
+    "diasVigencia": 366,
+    "estatus": "PRODUCCIÓN"
+  },
+  "error": null,
+  "estado": "OK"
+}
